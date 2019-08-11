@@ -6,6 +6,7 @@ import routeCreate from './views/routeCreate.vue';
 import Signup from './views/Signup.vue';
 import Login from './views/Login.vue';
 import Logout from './views/Logout.vue';
+import shoeIndex from './views/shoeIndex.vue';
 
 
 Vue.use(Router);
@@ -28,6 +29,11 @@ export default new Router({
       path: '/routes/new',
       name: 'route-new',
       component: routeCreate
+    },
+    {
+      path: '/shoes',
+      name: 'shoes',
+      component: shoeIndex
     },
     {
       path: '/signup',
