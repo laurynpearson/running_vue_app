@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import routesIndex from './views/routesIndex.vue';
+import routeCreate from './views/routeCreate.vue';
 
 
 Vue.use(Router);
@@ -19,6 +20,11 @@ export default new Router({
       path: '/routes',
       name: 'route',
       component: routesIndex
+    },
+    {
+      path: '/routes/new',
+      name: 'route-new',
+      component: routeCreate
     },
     {
       path: '/about',
