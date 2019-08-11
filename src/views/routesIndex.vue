@@ -2,8 +2,9 @@
   <div class="home">
     <h1>{{ message }}</h1>
     <div v-for="route in routes">
-      <h2>{{ route.name }}</h2>
-      <h2>{{ route.distance }}</h2>
+      <h2>Route Name: {{ route.name }}</h2>
+      <p>Distance: {{ route.distance }}</p>
+      <hr>
     </div>
   </div>
 </template>
