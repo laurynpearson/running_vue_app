@@ -7,6 +7,7 @@ import Signup from './views/Signup.vue';
 import Login from './views/Login.vue';
 import Logout from './views/Logout.vue';
 import shoeIndex from './views/shoeIndex.vue';
+import shoeCreate from './views/shoeCreate.vue';
 
 
 Vue.use(Router);
@@ -34,6 +35,11 @@ export default new Router({
       path: '/shoes',
       name: 'shoes',
       component: shoeIndex
+    },
+    {
+      path: '/shoes/new',
+      name: 'shoes-new',
+      component: shoeCreate
     },
     {
       path: '/signup',
