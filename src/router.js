@@ -8,6 +8,7 @@ import Login from './views/Login.vue';
 import Logout from './views/Logout.vue';
 import shoeIndex from './views/shoeIndex.vue';
 import shoeCreate from './views/shoeCreate.vue';
+import routeShow from './views/routeShow.vue';
 
 
 Vue.use(Router);
@@ -30,6 +31,11 @@ export default new Router({
       path: '/routes/new',
       name: 'route-new',
       component: routeCreate
+    },
+    {
+      path: '/routes/:id',
+      name: 'route-show',
+      component: routeShow
     },
     {
       path: '/shoes',
