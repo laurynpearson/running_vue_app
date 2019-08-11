@@ -1,8 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import routesIndex from './views/routesIndex.vue';
 
-Vue.use(Router)
+
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
@@ -14,6 +16,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/routes',
+      name: 'route',
+      component: routesIndex
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -22,4 +29,4 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     }
   ]
-})
+});
