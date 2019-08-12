@@ -5,6 +5,8 @@
       <h2>Shoe Name: {{ shoe.description }}</h2>
       <p>Mileage: {{ shoe.mileage }}</p>
       <p>Active: {{ shoe.active }}</p>
+      <p><router-link v-bind:to="/shoes/ + shoe.id" tag="button">Show More Information</router-link></p>
+      <p><router-link v-bind:to="'/shoes/' + shoe.id + '/edit'" tag="button">Edit Shoe Info</router-link></p>
       <hr>
     </div>
   </div>

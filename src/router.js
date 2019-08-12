@@ -9,6 +9,7 @@ import Logout from './views/Logout.vue';
 import shoeIndex from './views/shoeIndex.vue';
 import shoeCreate from './views/shoeCreate.vue';
 import routeShow from './views/routeShow.vue';
+import shoeShow from './views/shoeShow.vue';
 
 
 Vue.use(Router);
@@ -41,6 +42,11 @@ export default new Router({
       path: '/shoes',
       name: 'shoes',
       component: shoeIndex
+    },
+    {
+      path: '/shoes/:id',
+      name: 'shoe-show',
+      component: shoeShow
     },
     {
       path: '/shoes/new',
