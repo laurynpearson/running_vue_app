@@ -5,11 +5,19 @@
       <router-link to="/routes">Routes</router-link>
     <h2>Shoes</h2>
     <router-link to="/shoes">Shoes</router-link>
-    <p><iframe width="500" height="300" src="https://api.maptiler.com/maps/hybrid/?key=MtE9MrAXmvD6F55I34m5#" frameborder="0"></iframe></p>
-  </div>
+    <div id="map"></div>
+    <p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
+    </div>
 </template>
 
 <style>
+#map {position: fixed;
+      margin: auto; 
+      top: 20%; 
+      right: 10%; 
+      bottom: 90px; 
+      left: 100px;
+    }
 </style>
 
 <script>
@@ -19,7 +27,19 @@ export default {
       message: "Welcome to the Running App!"
     };
   },
-  created: function() {},
+  created: function() {
+    console.log(process.env.VUE_APP_MY_API_KEY);
+
+  },
+  mounted: function() {
+    mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
+    var map = new mapboxgl.Map({
+    container: 'map',
+      style: 'https://api.maptiler.com/maps/streets/style.json?key=8cLGrA1sfTFcNRsKOD67',
+      center: [-0, 0],
+      zoom: 0
+    });
+  },
   methods: {}
 };
 </script>
