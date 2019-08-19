@@ -11,12 +11,12 @@
 </template>
 
 <style>
-#map {position: fixed;
-      margin: auto; 
-      top: 20%; 
-      right: 10%; 
-      bottom: 90px; 
-      left: 100px;
+#map {/*position: relative;*/
+      /*height: 456px;*/
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
     }
 </style>
 
@@ -25,17 +25,17 @@ export default {
   data: function() {
     return {
       message: "Welcome to the Running App!"
+
     };
   },
   created: function() {
     console.log(process.env.VUE_APP_MY_API_KEY);
-
   },
   mounted: function() {
     mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
     var map = new mapboxgl.Map({
     container: 'map',
-      style: 'https://api.maptiler.com/maps/streets/style.json?key=8cLGrA1sfTFcNRsKOD67',
+      style: 'https://api.maptiler.com/maps/streets/style.json?key=<%- process.env.VUE_APP_MY_API_KEY %>',
       center: [-0, 0],
       zoom: 0
     });
@@ -43,3 +43,5 @@ export default {
   methods: {}
 };
 </script>
+
+<!-- <%- process.env.VUE_APP_MY_API_KEY %> -->

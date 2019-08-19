@@ -5,6 +5,7 @@
       <h2>City: {{route.city}}</h2>
       <h2>Distance: {{route.distance}}</h2>
       <h2>Description: {{route.name}}</h2>
+      
     </div>
   </div>
 </template>
@@ -26,6 +27,14 @@ export default {
       this.route = response.data;
     });
   },
-  methods: {}
+  methods: {
+    getURS: function(urs) {
+      console.log('you clicked the buton');
+      axios.post('/api/urs/' + this.urs.id, this.urs).then(response => {
+        console.log('created the urs');
+        this.$router.push('/urs');
+      });
+    }
+  }
 };
 </script>

@@ -4,6 +4,7 @@
     <div v-for="route in routes">
       <h2>Route Name: {{ route.name }}</h2>
       <p>Distance: {{ route.distance }}</p>
+      <p><router-link v-bind:to="'/routes/' + route.id">View this Route</router-link></p>
       <hr>
     </div>
   </div>

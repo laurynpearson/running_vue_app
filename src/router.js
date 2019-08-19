@@ -10,6 +10,7 @@ import shoeIndex from './views/shoeIndex.vue';
 import shoeCreate from './views/shoeCreate.vue';
 import routeShow from './views/routeShow.vue';
 import shoeShow from './views/shoeShow.vue';
+import ursIndex from './views/ursIndex.vue';
 
 
 Vue.use(Router);
@@ -52,6 +53,11 @@ export default new Router({
       path: '/shoes/new',
       name: 'shoes-new',
       component: shoeCreate
+    },
+    {
+      path: '/urs',
+      name: 'urs-index',
+      component: ursIndex
     },
     {
       path: '/signup',
