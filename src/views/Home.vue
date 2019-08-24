@@ -28,18 +28,18 @@ export default {
 
     };
   },
-  created: function() {
-    console.log(process.env.VUE_APP_MY_API_KEY);
-  },
-  mounted: function() {
-    mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
-    var map = new mapboxgl.Map({
-    container: 'map',
+  // created: function() {
+  //   console.log(process.env.VUE_APP_MY_API_KEY);
+  // },
+  // mounted: function() {
+  //   mapboxgl.setRTLTextPlugin('https://cdn.maptiler.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.1.2/mapbox-gl-rtl-text.js');
+  //   var map = new mapboxgl.Map({
+  //   container: 'map',
       // style: 'https://api.maptiler.com/maps/streets/style.json?key=<%- process.env.VUE_APP_MY_API_KEY %>',
       // center: [-0, 0],
       // zoom: 0
-    });
-  },
+  //   });
+  // },
   methods: {}
 };
 </script>
