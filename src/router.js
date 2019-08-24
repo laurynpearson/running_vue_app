@@ -45,14 +45,14 @@ export default new Router({
       component: shoeIndex
     },
     {
-      path: '/shoes/:id',
-      name: 'shoe-show',
-      component: shoeShow
-    },
-    {
       path: '/shoes/new',
       name: 'shoes-new',
       component: shoeCreate
+    },
+    {
+      path: '/shoes/:id',
+      name: 'shoe-show',
+      component: shoeShow
     },
     {
       path: '/urs',

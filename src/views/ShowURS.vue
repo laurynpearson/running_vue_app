@@ -1,5 +1,5 @@
 <template>
-  <div class="Shoe Update">
+  <div class="Show URS">
     <h1>{{ message }}</h1>
   </div>
 </template>

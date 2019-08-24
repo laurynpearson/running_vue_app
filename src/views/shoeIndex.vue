@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <p><router-link v-bind:to="'/shoes/new'" tag="button">Create New Shoe</router-link></p>
     <div v-for="shoe in shoes">
       <h2>id: {{ shoe.id }}</h2>
       <h2>Shoe Name: {{ shoe.description }}</h2>
