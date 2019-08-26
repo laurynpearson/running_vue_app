@@ -6,7 +6,7 @@
       <h2>Mileage: {{ shoe.mileage }}</h2>
       <h2>Active: {{ shoe.active }}</h2>
       <h2>Year Purchased: {{ shoe.year_purchased }}</h2>
-      <p><router-link v-bind:to="'/shoes/' + shoe.id + '/edit'" tag="button">Edit Shoe Info</router-link></p>
+      <!-- <p><router-link v-bind:to="'/shoes/' + shoe.id + '/edit'" tag="button">Edit Shoe Info</router-link></p> -->
     </div>
   </div>
 </template>

@@ -10,7 +10,7 @@
       <button v-on:click="setActive(true, shoe)">Active</button>
       <button v-on:click="setActive(false, shoe)">Not Active</button>
       <p><router-link v-bind:to="/shoes/ + shoe.id" tag="button">Show More Information</router-link></p>
-      <p><router-link v-bind:to="'/shoes/' + shoe.id + '/edit'" tag="button">Edit Shoe Info</router-link></p>
+     <!--  <p><router-link v-bind:to="'/shoes/' + shoe.id + '/edit'" tag="button">Edit Shoe Info</router-link></p> -->
       <hr>
     </div>
   </div>
