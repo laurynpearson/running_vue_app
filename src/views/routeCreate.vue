@@ -1,5 +1,6 @@
 <template>
   <div class="create">
+  <div id="create info">
     <h1>{{ message }}</h1>
     <div>
       <p>Name: <input type="text" v-model="newRouteName"></p>
@@ -8,8 +9,21 @@
       <p>Duration: <input type="text" v-model="newRouteDuration"></p>
       <button v-on:click="createRoute()">Create Route</button>
     </div>
-    <div id='map'></div>
-    <div id='distance' class='distance-container'></div>
+  </div>
+  <div id="fh5co-schedule" class="fh5co-bg" style="background-image: url(images/img_bg_1.jpg);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+          <h2>Class Schedule</h2>
+        </div>
+      </div>
+      <div id='map'></div>
+      <div id='distance' class='distance-container'></div>
+    </div>
+  </div>
+  <body>
+  
+  </body>
   </div>
   
 </template>
@@ -20,9 +34,9 @@ body {
   }
   #map { 
     position:absolute;
-    top:0;
+    top:50px;
     bottom:0;
-    width:100%;
+    width:90%;
   }
   .distance-container {
     position: absolute;
@@ -148,6 +162,9 @@ export default {
               }
             };
             geojson.features.push(point);
+            console.log(geojson.features);
+            console.log(geojson.features[0].geometry.coordinates[1]);
+            console.log(geojson.features[0].geometry.coordinates[0]);
           }
           if (geojson.features.length > 1) {
             linestring.geometry.coordinates = geojson.features.map(function(point) {
@@ -155,7 +172,7 @@ export default {
             });
              
             geojson.features.push(linestring);
-            console.log(geojson.features);
+            // console.log(geojson.features);
          
         // Populate the distanceContainer with total distance
             var value = document.createElement('pre');
@@ -171,7 +188,7 @@ export default {
       // UI indicator for clicking/hovering a point on the map
         map.getCanvas().style.cursor = (features.length) ? 'pointer' : 'crosshair';
       });
-    },
+  },
 
   methods: {
     createRoute: function() {
