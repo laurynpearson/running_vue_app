@@ -2,11 +2,11 @@
   <div class="create">
   <div id="create info">
     <h1>{{ message }}</h1>
-    <div>
+    <div id="new_fields">
       <p>Name: <input type="text" v-model="newRouteName"></p>
       <p>City: <input type="text" v-model="newRouteCity"></p>
       <p>Distance: <input type="text" v-model="newRouteDistance"></p>
-      <p>Duration: <input type="text" v-model="newRouteDuration"></p>
+      <!-- <p>Duration: <input type="text" v-model="newRouteDuration"></p> -->
       <button v-on:click="createRoute()">Create Route</button>
     </div>
   </div>
@@ -31,6 +31,9 @@
 body { 
     margin:0;
     padding:0;
+  }
+  #new_fields {
+
   }
   #map { 
     position:absolute;
@@ -65,12 +68,16 @@ export default {
       newRouteName: "",
       newRouteCity: "",
       newRouteDistance: "",
-      newRouteDuration: ""
+      // newRouteDistance: this.distanceLength,
+      newRouteDuration: "",
+      features: [],
+      distances: []
     };
 
   },
   created: function() {},
   mounted: function() {
+    var that = this;
     mapboxgl.accessToken = 'accessToken';
     var map = new mapboxgl.Map({
       container: 'map', // container id
@@ -86,8 +93,9 @@ export default {
       trackUserLocation: true
     }));
 
+    map.addControl(new mapboxgl.NavigationControl());
+
     var distanceContainer = document.getElementById('distance');
-   
       // GeoJSON object to hold our measurement features
       var geojson = {
         "type": "FeatureCollection",
@@ -163,8 +171,10 @@ export default {
             };
             geojson.features.push(point);
             console.log(geojson.features);
-            console.log(geojson.features[0].geometry.coordinates[1]);
-            console.log(geojson.features[0].geometry.coordinates[0]);
+            console.log(that);
+            that.features = geojson.features;
+
+            // console.log(geojson.features[0].geometry.coordinates[0]);
           }
           if (geojson.features.length > 1) {
             linestring.geometry.coordinates = geojson.features.map(function(point) {
@@ -172,12 +182,22 @@ export default {
             });
              
             geojson.features.push(linestring);
-            // console.log(geojson.features);
-         
+            
         // Populate the distanceContainer with total distance
             var value = document.createElement('pre');
+
             value.textContent = 'Total distance: ' + turf.lineDistance(linestring).toLocaleString() + 'km';
             distanceContainer.appendChild(value);
+            
+            var distanceLength = turf.lineDistance(linestring).toLocaleString() + 'km';
+            console.log(distanceLength);
+            
+            // var distances = distances.push(distanceLength);
+            // console.log(distances);
+
+            // var distances = distances.push(value.textContent);
+            // console.log(distances);
+            // console.log(turf.lineDistance(linestring).toLocaleString() + 'km');
           }
           map.getSource('geojson').setData(geojson);
         });
@@ -193,11 +213,13 @@ export default {
   methods: {
     createRoute: function() {
       console.log('in create route');
+      console.log(this.features[this.features.length - 1]);
       var newRoute = {
         name: this.newRouteName,
         city: this.newRouteCity,
         distance: this.newRouteDistance,
-        duration: this.newRouteDuration
+        duration: this.newRouteDuration,
+        coordinates: this.features[this.features.length - 1]
       };
       axios.post('/api/routes', newRoute).then(response => {
         console.log('in the callback for create');

@@ -11,6 +11,7 @@ import shoeCreate from './views/shoeCreate.vue';
 import routeShow from './views/routeShow.vue';
 import shoeShow from './views/shoeShow.vue';
 import ursIndex from './views/ursIndex.vue';
+import raceIndex from './views/raceIndex.vue';
 
 
 Vue.use(Router);
@@ -58,6 +59,11 @@ export default new Router({
       path: '/urs',
       name: 'urs-index',
       component: ursIndex
+    },
+    {
+      path: '/races',
+      name: 'races-index',
+      component: raceIndex
     },
     {
       path: '/signup',

@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-md-4 text-center animate-box">
             <div class="services">
-              <span><img class="img-responsive" src="images/running-shoe.svg" alt=""></span>
+              <span><img class="img-responsive" src="images/road.svg" alt=""></span>
               <h3>Routes</h3>
               <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius</p>
               <p><a href="/routes" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
@@ -29,7 +29,7 @@
           </div>
           <div class="col-md-4 text-center animate-box">
             <div class="services">
-              <span><img class="img-responsive" src="images/exercise.svg" alt=""></span>
+              <span><img class="img-responsive" src="images/running-shoe.svg" alt=""></span>
               <h3>Shoes</h3>
               <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius</p>
               <p><a href="/shoes" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
