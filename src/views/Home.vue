@@ -7,9 +7,9 @@
         <div class="col-md-8 col-md-offset-2 text-center">
           <div class="display-t">
             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-              <h1>Running</h1>
-              <!-- <h2>Free html5 templates Made by <a href="http://freehtml5.co/" target="_blank">freehtml5.co</a></h2> -->
-              <!-- <p><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn btn-primary popup-vimeo">Watch Our Video</a></p> -->
+              <h1>Who Run the World?</h1>
+              <h1>YOU</h1>
+              <p><a href="/login" class="btn btn-primary">Login/Sign Up</a></p>
             </div>
           </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="services">
               <span><img class="img-responsive" src="images/road.svg" alt=""></span>
               <h3>Routes</h3>
-              <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius</p>
+              <p>Use our list to choose a route or create your own.</p>
               <p><a href="/routes" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
             </div>
           </div>
@@ -31,28 +31,21 @@
             <div class="services">
               <span><img class="img-responsive" src="images/running-shoe.svg" alt=""></span>
               <h3>Shoes</h3>
-              <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius</p>
+              <p>Keep track of the mileage on your shoes.</p>
               <p><a href="/shoes" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
             </div>
           </div>
           <div class="col-md-4 text-center animate-box">
             <div class="services">
-              <span><img class="img-responsive" src="images/yoga-carpet.svg" alt=""></span>
-              <h3>Create a Route</h3>
-              <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius</p>
-              <p><a href="/routes/new" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
+              <span><img class="img-responsive" src="images/earth-globe.svg" alt=""></span>
+              <h3>Find a Race</h3>
+              <p>Start planning out your next race!</p>
+              <p><a href="/races" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <h1>{{ message }}</h1>
-    <h2>Routes</h2>
-      <router-link to="/routes">Routes</router-link>
-    <h2>Shoes</h2>
-    <router-link to="/shoes">Shoes</router-link> -->
-    <!-- <div id="map"></div>
-    <p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p> -->
   </div>
 </template>
 

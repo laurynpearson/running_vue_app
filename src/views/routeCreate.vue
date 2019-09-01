@@ -5,8 +5,7 @@
     <div id="new_fields">
       <p>Name: <input type="text" v-model="newRouteName"></p>
       <p>City: <input type="text" v-model="newRouteCity"></p>
-      <p>Distance: <input type="text" v-model="newRouteDistance"></p>
-      <!-- <p>Duration: <input type="text" v-model="newRouteDuration"></p> -->
+      <p>Distance: <input type="text" v-model="newRouteDistance" disabled></p>
       <button v-on:click="createRoute()">Create Route</button>
     </div>
   </div>
@@ -78,6 +77,7 @@ export default {
   created: function() {},
   mounted: function() {
     var that = this;
+    console.log(process.env.VUE_APP_mapbox_token);
     mapboxgl.accessToken = 'accessToken';
     var map = new mapboxgl.Map({
       container: 'map', // container id
@@ -107,9 +107,11 @@ export default {
         "type": "Feature",
         "geometry": {
           "type": "LineString",
+          "units": "miles",
           "coordinates": []
         }
       };
+
       map.on('load', function() {
         map.addSource('geojson', {
           "type": "geojson",
@@ -184,13 +186,15 @@ export default {
             geojson.features.push(linestring);
             
         // Populate the distanceContainer with total distance
-            var value = document.createElement('pre');
+            // var value = document.createElement('pre');
 
-            value.textContent = 'Total distance: ' + turf.lineDistance(linestring).toLocaleString() + 'km';
-            distanceContainer.appendChild(value);
+            // value.textContent = 'Total distance: ' + turf.lineDistance(linestring).toLocaleString() * 0.62 + 'mi';
+            // value.textContent = "";
+            // distanceContainer.appendChild(value);
             
-            var distanceLength = turf.lineDistance(linestring).toLocaleString() + 'km';
-            console.log(distanceLength);
+            var distanceMiles = (turf.lineDistance(linestring).toLocaleString() * 0.62).toFixed(2) + "mi";
+            that.newRouteDistance = distanceMiles;
+            console.log(that.newRouteDistance);
             
             // var distances = distances.push(distanceLength);
             // console.log(distances);

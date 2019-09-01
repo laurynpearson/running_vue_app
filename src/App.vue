@@ -6,12 +6,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 text-right">
-              <p class="num">Call: +01 123 456 7890</p>
-              <ul class="fh5co-social">
-                <li><a href="#"><i class="icon-twitter"></i></a></li>
-                <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                <li><a href="#"><i class="icon-github"></i></a></li>
-              </ul>
+              <p class="num"> </p>
             </div>
           </div>
         </div>

@@ -18,6 +18,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app');
 
-// module.exports = {
-//   length: require('@turf/length')
-// };
+
