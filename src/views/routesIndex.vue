@@ -3,7 +3,6 @@
     <h1>{{ message }}</h1>
     <p><router-link v-bind:to="'/routes/new'" tag="button">Create New Route</router-link></p>
     <div v-for="route in routes">
-      <h2>id: {{ route.id }}</h2>
       <h2>Route Name: {{ route.name }}</h2>
       <p>Distance: {{ route.distance }}</p>
       <p><router-link v-bind:to="'/routes/' + route.id">View this Route</router-link></p>

@@ -28,6 +28,18 @@
   </div>
 </template>
 <style>
+.searchBar {
+  float: center;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.countryDropdown {
+  float: center;
+  padding-left: 40px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  
+}
 </style>
 
 <script>
@@ -38,7 +50,7 @@ export default {
   mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      message: "2019 Races",
+      message: "2019 Races Around the World",
       races: [],
       searchTerm: "",
       sortAttribute: "name",
@@ -49,10 +61,10 @@ export default {
     axios.get('/api/races').then(response => {
       this.races = response.data;
     });
-
   },
   computed: {
     raceCountries() {
+      console.log(this.races);
       return uniqBy(this.races, 'country');
     }
   },

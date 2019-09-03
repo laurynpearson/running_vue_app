@@ -23,7 +23,7 @@
             <div class="services">
               <span><img class="img-responsive" src="images/road.svg" alt=""></span>
               <h3>Routes</h3>
-              <p>Use our list to choose a route or create your own.</p>
+              <p>Choose a route or create your own.</p>
               <p><a href="/routes" class="btn btn-primary btn-outline btn-sm">More <i class="icon-arrow-right"></i></a></p>
             </div>
           </div>

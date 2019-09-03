@@ -1,11 +1,11 @@
 <template>
   <div class="create">
-  <div id="create info">
+  <div id="create-info">
     <h1>{{ message }}</h1>
-    <div id="new_fields">
+    <div id="new-fields">
       <p>Name: <input type="text" v-model="newRouteName"></p>
       <p>City: <input type="text" v-model="newRouteCity"></p>
-      <p>Distance: <input type="text" v-model="newRouteDistance" disabled></p>
+      <p>Distance: <input type="text" v-model="newRouteDistance" disabled><label for="distance">miles</label></p>
       <button v-on:click="createRoute()">Create Route</button>
     </div>
   </div>
@@ -63,11 +63,10 @@ import axios from 'axios';
 export default {
   data: function() {
     return {
-      message: "Welcome to the create route page!!",
+      message: "Create a Route",
       newRouteName: "",
       newRouteCity: "",
       newRouteDistance: "",
-      // newRouteDistance: this.distanceLength,
       newRouteDuration: "",
       features: [],
       distances: []
@@ -77,7 +76,6 @@ export default {
   created: function() {},
   mounted: function() {
     var that = this;
-    console.log(process.env.VUE_APP_mapbox_token);
     mapboxgl.accessToken = 'accessToken';
     var map = new mapboxgl.Map({
       container: 'map', // container id
@@ -192,7 +190,7 @@ export default {
             // value.textContent = "";
             // distanceContainer.appendChild(value);
             
-            var distanceMiles = (turf.lineDistance(linestring).toLocaleString() * 0.62).toFixed(2) + "mi";
+            var distanceMiles = (turf.lineDistance(linestring).toLocaleString() * 0.62).toFixed(2);
             that.newRouteDistance = distanceMiles;
             console.log(that.newRouteDistance);
             

@@ -17,14 +17,12 @@
           </div>
         </div>
       </div>
-      <!-- <button v-on:click="createURS(urs)">Finish Route</button> -->
     </div>
   </div>
 </template>
 
 <style>
 </style>
-
 <script>
 import axios from "axios";
 export default {
@@ -45,6 +43,8 @@ export default {
     axios.get('/api/shoes').then(response =>{
       this.shoes = response.data;
     });
+  },
+  mounted: function() {
   },
   methods: {
     viewShoe: function(shoe) {
