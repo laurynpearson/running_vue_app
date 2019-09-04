@@ -3,8 +3,8 @@
     <h1>{{ message }}</h1>
     <p><router-link v-bind:to="'/shoes/new'" tag="button">Create New Shoe</router-link></p>
     <div v-for="shoe in shoes">
-      <h2>id: {{ shoe.id }}</h2>
-      <h2>Shoe Name: {{ shoe.description }}</h2>
+      <!-- <h2>id: {{ shoe.id }}</h2> -->
+      <h3>Shoe Name: {{ shoe.description }}</h3>
       <p>Mileage: {{ shoe.mileage }}</p>
       <p>Active: {{ shoe.active }}</p>
       <button v-on:click="setActive(true, shoe)">Active</button>
@@ -24,7 +24,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Welcome to Shoe Index!",
+      message: "My Shoes",
       shoes: [],
       shoe: {}     
     };
@@ -36,18 +36,20 @@ export default {
   },
   methods: {
     setActive: function(status, shoe) {
-      console.log(status);
+      // console.log(status);
       console.log(shoe);
       var params = {
         active: shoe.active
       };
-      console.log(params);
-      console.log(shoe.active = status);
+      // console.log(params);
+      // console.log(shoe.active = status);
       axios.patch('/api/shoes/' + shoe.id, params).then(response => {
-        console.log('update active status');
-        console.log(response.data);
+        // console.log('update active status');
+        // console.log(response.data);
         shoe.active = status;
-        console.log(shoe.active);
+        console.log(status);
+        // console.log(shoe.active);
+        console.log(response.data);
       });
     }
   }

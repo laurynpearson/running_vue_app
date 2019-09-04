@@ -2,12 +2,10 @@
   <div class="create">
   <div id="create-info">
     <h1>{{ message }}</h1>
-    <div id="new-fields">
       <p>Name: <input type="text" v-model="newRouteName"></p>
       <p>City: <input type="text" v-model="newRouteCity"></p>
       <p>Distance: <input type="text" v-model="newRouteDistance" disabled><label for="distance">miles</label></p>
       <button v-on:click="createRoute()">Create Route</button>
-    </div>
   </div>
   <div id="fh5co-schedule" class="fh5co-bg" style="background-image: url(images/img_bg_1.jpg);">
     <div class="container">
@@ -32,7 +30,10 @@ body {
     padding:0;
   }
   #new_fields {
-
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
   }
   #map { 
     position:absolute;
@@ -76,7 +77,7 @@ export default {
   created: function() {},
   mounted: function() {
     var that = this;
-    mapboxgl.accessToken = 'accessToken';
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cnlucGVhcnNvbiIsImEiOiJjanpyYnZ6eGQwemZ5M2xwM3Jid3E4MHFtIn0.cmNuiKHyvixCRMU4eF4mcg';
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location

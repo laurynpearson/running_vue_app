@@ -7,8 +7,8 @@
         <div class="col-md-8 col-md-offset-2 text-center">
           <div class="display-t">
             <div class="display-tc animate-box" data-animate-effect="fadeIn">
-              <h1>Who Run the World?</h1>
-              <h1>YOU</h1>
+              <!-- <h1>Who Run the World?</h1>
+              <h1>YOU</h1> -->
               <p><a href="/login" class="btn btn-primary">Login/Sign Up</a></p>
             </div>
           </div>

@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1>{{ route.name }} {{ message }} </h1>
     <div>
       <h2>City: {{route.city}}</h2>
       <h2>Distance: {{route.distance}}</h2>
-      <h2>Description: {{route.name}}</h2>
+      <!-- <h2>Description: {{route.name}}</h2> -->
       <div id="shoes">
         <button v-on:click="viewShoe(shoe)">View Shoes</button>
         <div v-if="currentShoe === shoe">
           <div v-for="shoe in shoes">
-          <h2>ID: {{ shoe.id }}</h2>
-          <h2>Shoe Name: {{ shoe.description }}</h2>
-          <p>Mileage: {{ shoe.mileage }}</p>
-          <p>Active: {{ shoe.active }}</p>
+          <!-- <h2>ID: {{ shoe.id }}</h2> -->
+          <h3>Shoe Name: {{ shoe.description }}</h3>
+          <h3>Mileage: {{ shoe.mileage }}</h3>
+          <h3>Active: {{ shoe.active }}</h3>
           <button v-on:click="selectShoe(shoe)">Select Shoe and Run!</button>
           </div>
         </div>
@@ -28,7 +28,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Welcome to Route Show!",
+      message: "Route",
       route: {},
       urs: {},
       shoe: {},
